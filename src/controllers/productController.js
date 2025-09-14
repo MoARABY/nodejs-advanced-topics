@@ -5,10 +5,6 @@ const shopModel = require('../../DB/models/shopModel')
 const {client} = require('../../DB/redisConfig')
 
 
-
-
-
-
 const createProduct = asyncHandler(async(req,res)=>{
     const {name,description,price,shopId,quantity} = req.body
     if(!name || !description || !price || !shopId || !quantity){
