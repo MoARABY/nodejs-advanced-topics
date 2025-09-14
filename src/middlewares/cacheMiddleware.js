@@ -4,7 +4,7 @@ const asyncHandler = require('express-async-handler');
 
 
 
-const cacheMiddleware = (keyItem,keyFunction,keyId)=>{
+const cacheMiddleware = (keyItem,keyId)=>{
     return asyncHandler(async (req, res, next) => {
         try {
             let key = keyItem;
@@ -16,12 +16,8 @@ const cacheMiddleware = (keyItem,keyFunction,keyId)=>{
                 console.log('Serving from cache');
                 return res.status(200).json(JSON.parse(cacheItem));
             }
-            const freshData = await keyFunction();
-            if (!freshData) {
-                return res.status(404).json({ message: 'Data not found' });
-            }
-            await client.setEx(key, 3600, JSON.stringify(freshData));
-            return res.status(200).json(freshData);
+            res.locals.cacheKey = key;
+            next();
         } catch (error) {
             console.error('Cache middleware error:', error);
             return res.status(500).json({ error: 'Internal Server Error' });

@@ -39,11 +39,18 @@ const createProduct = asyncHandler(async(req,res)=>{
 const getProduct = asyncHandler(async(req,res)=>{
     const {id} = req.params
     const product = await productModel.findById(id).populate({path:'shopId', select:'name'})
+    if(res.locals.cacheKey) {
+        await client.setEx(res.locals.cacheKey, 3600, JSON.stringify(product));
+    }
     product ? res.status(200).json({product}) : res.status(404).json({message:'Product not found'})
 })
 
 const getProducts = asyncHandler(async(req,res)=>{
-    return await productModel.find().populate({path:'shopId', select:'name'})
+    const products = await productModel.find().populate({path:'shopId', select:'name'})
+    if(res.locals.cacheKey) {
+        await client.setEx(res.locals.cacheKey, 3600, JSON.stringify(products));
+    }
+    products ? res.status(200).json({products}) : res.status(404).json({message:'Products not found'})
 })
 
 const updateProduct = asyncHandler(async(req,res)=>{

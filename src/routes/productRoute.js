@@ -4,8 +4,8 @@ const {createProduct,getProduct,getProducts,updateProduct,deleteProduct} = requi
 const cacheMiddleware = require('../middlewares/cacheMiddleware')
 
 router.post('/',createProduct)
-router.get('/:id',cacheMiddleware('product',getProduct,'id'))
-router.get('/',cacheMiddleware('products',getProducts))
+router.get('/:id',cacheMiddleware('product','id'),getProduct)
+router.get('/',cacheMiddleware('products'),getProducts)
 router.put('/:id',updateProduct)
 router.delete('/:id',deleteProduct)
 
