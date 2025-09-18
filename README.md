@@ -19,6 +19,8 @@ The goal is to reduce database load and improve performance by serving cached da
 - npm install redis
 - then start coding which mentioned in the "cache" branch
 
+
+
 # Scheduler with node-cron ⏰
 
 This part integrates **node-cron** into the project to handle scheduled background tasks
@@ -39,6 +41,10 @@ This part integrates **node-cron** into the project to handle scheduled backgrou
 │    │    └───────────── Day of the month (1 - 31)
 │    └────────────────── Hour (0 - 23)
 └─────────────────────── Minute (0 - 59)
+
+
+# LLM integration
+
 
 
 
