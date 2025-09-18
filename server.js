@@ -3,7 +3,8 @@ const app = express();
 require('dotenv').config()
 // require('./src/schedular1')
 // require('./src/schedular2')
-require('./src/llm/textllm')
+// require('./src/llm/textllm')
+// require('./src/scripts/embeddingProducts')
 
 
 
