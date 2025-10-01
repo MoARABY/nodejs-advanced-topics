@@ -79,8 +79,8 @@ The goal is to transform text into high-dimensional vectors that can be used for
 - Install groq sdk : npm i groq-sdk
 
 ## project usage
-- npm install redis
-- then start coding which mentioned in the "cache" branch
+- first start with basic askAI controller
+- then working with embedding model to advanced AI-Query
 
 
 
