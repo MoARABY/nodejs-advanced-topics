@@ -1,4 +1,4 @@
-# nodejs-advanced-topics
+# NodeJS-advanced-topics
 
 
 
@@ -23,6 +23,12 @@ The goal is to reduce database load and improve performance by serving cached da
 ### inside project file
 - npm install redis
 - then start coding which mentioned in the "cache" branch
+
+### project usage
+- in this project we use redis for
+- 1- cache while request all products
+- 2- cache while request one product
+- 3- cache deleted when add,update,delete products
 
 
 
