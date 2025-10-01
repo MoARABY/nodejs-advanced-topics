@@ -24,7 +24,7 @@ The goal is to reduce database load and improve performance by serving cached da
 - npm install redis
 - then start coding which mentioned in the "cache" branch
 
-### project usage
+## project usage
 - in this project we use redis for
 - 1- cache while request all products
 - 2- cache while request one product
@@ -59,12 +59,28 @@ This part integrates **node-cron** into the project to handle scheduled backgrou
 
 └─────────────────────── Minute (0 - 59)
 
-### inside project file
-- npm install node-cron
-- then start coding which mentioned in the "scheduling" branch
+## project usage
+- we use cron job to work every 1 hour on products docs see if any product has quantity less than 5 
+- write product data inside 'lastQProducts' file
 
 
-# LLM integration
+# LLM integration and embeddings
+This part integrates OpenAI API and groq to generate embeddings for your application data.
+The goal is to transform text into high-dimensional vectors that can be used for semantic search, recommendations, and AI-powered features.
+
+## 🚀 Features
+- asking questations to AI from your app
+- Generates vector embeddings using OpenAI models.
+- Stores embeddings for efficient semantic search instead of simple keyword search.
+- Easy to integrate into any Node.js / Express project.
+
+## 📦 llm Installation
+- Install the OpenAI package : npm i openai
+- Install groq sdk : npm i groq-sdk
+
+## project usage
+- npm install redis
+- then start coding which mentioned in the "cache" branch
 
 
 
