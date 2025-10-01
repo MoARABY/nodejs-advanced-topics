@@ -1,50 +1,17 @@
-# Redis Cache Middleware 📝
-
-This part integrates **Redis** as a caching layer for API responses in a Node.js / Express application.  
-The goal is to reduce database load and improve performance by serving cached data when available.  
-
-## 🚀 Features
-- Caches API responses using **Redis**.  
-- Reuses cached data if available instead of hitting the database.  
-- Supports **dynamic keys** based on request params.  
-- Easy to plug into any Express route.  
-
-## 📦 Redis Installation
-- redis not available for direct installation on windows so we should use **Docker**
-- docker pull redis -or-
-- docker run -d --name redis -p 6379:6379 redis:latest
-- docker exec -it my-redis redis-cli (run redis cli)
-
-### inside project file
-- npm install redis
-- then start coding which mentioned in the "cache" branch
-
-
-
-# Scheduler with node-cron ⏰
-
-This part integrates **node-cron** into the project to handle scheduled background tasks
+# LLM integration and embeddings
+This part integrates OpenAI API and groq to generate embeddings for your application data.
+The goal is to transform text into high-dimensional vectors that can be used for semantic search, recommendations, and AI-powered features.
 
 ## 🚀 Features
-- Task scheduling using **node-cron**.
-- Runs scheduled jobs inside your Node.js/Express app.
-- Uses standard cron expressions.  
-- Easy to plug into any Express route.  
+- asking questations to AI from your app
+- Generates vector embeddings using OpenAI models.
+- Stores embeddings for efficient semantic search instead of simple keyword search.
+- Easy to integrate into any Node.js / Express project.
 
-## 📦 node-cron Installation
-- npm install node-cron
+## 📦 llm Installation
+- Install the OpenAI package : npm i openai
+- Install groq sdk : npm i groq-sdk
 
-*    *    *    *    *
-│    │    │    │    │
-│    │    │    │    └─── Day of the week (0 - 7) (Sunday = 0 or 7)
-│    │    │    └──────── Month (1 - 12)
-│    │    └───────────── Day of the month (1 - 31)
-│    └────────────────── Hour (0 - 23)
-└─────────────────────── Minute (0 - 59)
-
-
-# LLM integration
-
-
-
-
+## project usage
+- first start with basic askAI controller
+- then working with embedding model to advanced AI-Query
